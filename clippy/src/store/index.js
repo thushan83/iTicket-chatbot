@@ -1,18 +1,22 @@
 import { createStore } from "vuex";
+import * as API from "@/API/index";
 
 export default createStore({
   state: {
-    awnsers: [],
-    anwser: "",
+    answers: [],
+    answer: "",
   },
   mutations: {
     saveAwnser(state, payload) {
-      state.awnsers = payload;
+      state.answer = payload;
     },
 },
 actions: {
-    askQuestion(payload) {
+    async askQuestion(context, payload) {
      console.log('payload', payload)
+     const response = await API.askAIQuesion(payload)
+     console.log('response', response.res)
+      context.commit('saveAwnser', response.res)
     }
 }
 
