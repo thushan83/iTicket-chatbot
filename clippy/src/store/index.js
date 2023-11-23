@@ -3,12 +3,12 @@ import * as API from "@/API/index";
 
 export default createStore({
   state: {
-    anwsers: [],
-    anwser: "",
+    answers: [],
+    answer: "",
   },
   mutations: {
     saveAwnser(state, payload) {
-      state.anwser = payload;
+      state.answer = payload;
     },
 },
 actions: {

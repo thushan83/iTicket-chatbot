@@ -21,8 +21,8 @@ export default {
   },
   computed: {
    awnser () {
-     console.log('awnser', this.$store.state.anwser)
-     return this.$store.state.anwser
+     console.log('awnser', this.$store.state.answer)
+     return this.$store.state.answer
    }
   },
   methods: {
