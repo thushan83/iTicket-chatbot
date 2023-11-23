@@ -1,5 +1,6 @@
 import json
 from flask import Flask,request, json
+import chat_manager
 
 app = Flask(__name__)
 
@@ -19,7 +20,7 @@ guest = "You: "
 def chat_response(request):
     question = request.json.get("question")
     default_response = "Sorry I do not have the answer, or I do not understand your question"
-    return json.dumps({'res': ''+default_response+'','question': ''+question+''})
+    return json.dumps({'answer': ''+default_response+'','question': ''+question+''})
 
 
 def main():
