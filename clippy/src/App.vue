@@ -1,5 +1,5 @@
 <template>
-  <AskQuestion msg="Welcome to Your Vue.js App"/>
+  <AskQuestion/>
 </template>
 
 <script>
