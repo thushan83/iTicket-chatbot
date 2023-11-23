@@ -1,8 +1,11 @@
 import json
 from flask import Flask,request, json
 import chat_manager
+from flask_cors import CORS, cross_origin
+
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def index():
@@ -26,7 +29,7 @@ def chat_response(request):
 def main():
     default_response = "Sorry I do not have the answer, or I do not understand your question"
     print(chatbot_name,"Welcome how can I help you ?")
-    while True:        
+    while True:
         question = ""
         question = input(guest)
         print(chatbot_name, default_response)
