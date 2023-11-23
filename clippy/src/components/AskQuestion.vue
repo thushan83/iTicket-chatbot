@@ -2,6 +2,7 @@
   <div class="all-qestion-container">
     <div  v-for="askedQuestion in AllQuestions" :key="askedQuestion" >
       <p class="asked-question">{{ askedQuestion }}</p>
+      <p> {{ awnser }}</p>
     </div>
   </div>
   <div>
@@ -17,6 +18,12 @@ export default {
       question: '',
       AllQuestions: []
     }
+  },
+  computed: {
+   awnser () {
+     console.log('awnser', this.$store.state.anwser)
+     return this.$store.state.anwser
+   }
   },
   methods: {
   async ask () {
