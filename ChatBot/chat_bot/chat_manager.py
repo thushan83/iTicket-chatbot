@@ -40,14 +40,28 @@ class ChatManager():
         prob = probs[0][predicted.item()]
 
         default_response = "Sorry I do not have the answer, or I do not understand your question"
-
-        if prob.item() > 0.75:
+        print("------------------------------------------------------")
+        print("model op---",op)
+        print("tags---",self.tags)
+        print("prob---",str(prob.item()),"tag---",str(predicted.item()))
+        print("------------------------------------------------------")
+        if prob.item() > 0.54:
             for intent in self.intents_from_file['intents']:
                 if tag == intent["tag"]:
                     return(random.choice(intent['responses']))
         else:
             return default_response
 
-#if __name__ == "__main__":
-#   cm = ChatManager()
-#   print("=====", cm.find_answer("Hi"))
+def main():  
+    chatbot_name = "iTicket: "
+    guest = "You: "
+    cm = ChatManager()  
+    print(chatbot_name,"Welcome how can I help you ?")
+    while True:
+        question = ""
+        question = input(guest)
+        print(chatbot_name, cm.find_answer(question))
+
+if __name__ == "__main__":
+    main()
+  

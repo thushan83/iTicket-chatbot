@@ -16,6 +16,50 @@
           "Hi there, what can I do for you?",
           "Hi there, how can I help?"
         ]
-      }    
+      },
+      {
+        "tag": "iticket_create_product",
+        "patterns": [
+          "create product",
+          "new product",
+          "add product"        
+        ],
+        "responses": [
+          "Go to Inventory > Products > Press [+New]"
+        ]
+      },
+      {
+        "tag": "iticket_create_article",
+        "patterns": [
+          "create article",
+          "new article",
+          "add article"        
+        ],
+        "responses": [
+          "Go to Inventory > Articles > Press [+New]"
+        ]
+      },
+      {
+        "tag": "iticket_create_location",
+        "patterns": [
+          "create location",
+          "new location",
+          "add location"        
+        ],
+        "responses": [
+          "Go to Inventory > Articles > Press [+New]"
+        ]
+      },
+      {
+        "tag": "iticket_search_orders",
+        "patterns": [
+          "search order",
+          "find order",
+          "locate order"
+        ],
+        "responses": [
+          "Go to Order Management > Search Orders"
+        ]
+      }                
     ]
   }

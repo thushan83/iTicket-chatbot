@@ -56,17 +56,16 @@ class Trainer():
             #print(self.tag_words_map)
 
         #clean any ignore words
-        all_pattern_words = [self.stemmer.stem(word) for word in self.all_pattern_words if word not in self.ignore_words]
-        non_duplicated_words = set(all_pattern_words)
-        self.all_pattern_words = sorted(non_duplicated_words)
-        non_duplicated_tags = set(self.tags)
-        self.tags = sorted(non_duplicated_tags)
-        return all_pattern_words
+        self.all_pattern_words = [self.stemmer.stem(word) for word in self.all_pattern_words if word not in self.ignore_words]
+        #set is to remove duplicated
+        self.all_pattern_words = sorted(set(self.all_pattern_words))
+        self.tags = sorted(set(self.tags))
+        return self.all_pattern_words
 
      def populate_training_data_sets(self):
         for pattern_words,tag in self.tag_words_map:
             bag = self.dataCln.get_bag_of_words(pattern_words,self.all_pattern_words)
-            #print(bag)
+            print("BAG --",bag)
             self.X_Training_Set.append(bag)
             label = self.tags.index(tag)
             self.Y_Training_Set.append(label)
@@ -75,7 +74,7 @@ class Trainer():
         self.Y_Training_Set = np.array(self.Y_Training_Set, dtype=np.int64)
 
      def train(self):
-         self.input_size = len(self.X_Training_Set[0])
+         self.input_size = self.hidden_size = len(self.X_Training_Set[0])
          self.output_size = len(self.tags)   
 
          dataset = DataSet(self.X_Training_Set,self.Y_Training_Set)
@@ -113,7 +112,7 @@ class Trainer():
                 #print("++++++++",labels)
 
                 loss = loss_func(outputs, labels)              
-
+                loss.backward()
                 optimizer.step()
 
                 #if(training_turn%100 == 0):
@@ -135,16 +134,14 @@ class Trainer():
 
 
 
-     def print(self):    
+     def print(self):                
+        print("tag_words_map",self.tag_words_map)          
         print("__",self.tags)
         print("--",self.X_Training_Set)
         print("??",self.Y_Training_Set)
-
-       
-
-
+     
 if __name__ == "__main__":
-    trainer = Trainer(num_epochs =  10 , batch_size = 8 , learning_rate = 0.001, hidden_size = 8)
+    trainer = Trainer(num_epochs =  50 , batch_size = 8 , learning_rate = 0.001, hidden_size = 8)
     training_data = trainer.prepare_training_data()
     trainer.populate_training_data_sets()
     #trainer.print()

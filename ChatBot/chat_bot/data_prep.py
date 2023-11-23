@@ -1,5 +1,5 @@
 import nltk
-from nltk.stem.porter import PorterStemmer
+from nltk.stem.snowball import SnowballStemmer
 import numpy as np
 
 #nltk.download('punkt')
@@ -8,7 +8,7 @@ import numpy as np
 class DataClenser:
 
     def __init__(self):
-        self.stemmer = PorterStemmer()
+        self.stemmer = SnowballStemmer("english")
 
     def tokanize(self,question):
         return nltk.word_tokenize(question)    
