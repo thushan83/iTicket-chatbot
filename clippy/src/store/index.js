@@ -16,7 +16,7 @@ actions: {
      console.log('payload', payload)
      const response = await API.askAIQuesion(payload)
      console.log('response', response.res)
-      context.commit('saveAwnser', response.res)
+      context.commit('saveAwnser', response.answer)
     }
 }
 
