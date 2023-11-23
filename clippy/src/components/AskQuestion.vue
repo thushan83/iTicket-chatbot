@@ -19,10 +19,12 @@ export default {
     }
   },
   methods: {
-  ask () {
+  async ask () {
     this.AllQuestions.push(this.question)
-    this.question = ''
-    // this.$store.dispatch('askQuestion', this.question)
+    // this.question = ''
+    console.log('question', this.question)
+   await this.$store.dispatch("askQuestion", this.question)
+   this.question = ''
   }
 }
 }
