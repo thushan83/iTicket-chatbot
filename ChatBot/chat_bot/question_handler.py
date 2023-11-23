@@ -1,6 +1,6 @@
 import json
 from flask import Flask,request, json
-import chat_manager
+from chat_manager import ChatManager
 
 app = Flask(__name__)
 
@@ -13,14 +13,17 @@ def index():
 def chatlistner():
     return chat_response(request)
 
+cm = ChatManager()    
+
 
 chatbot_name = "iTicket: "
 guest = "You: "
 
 def chat_response(request):
     question = request.json.get("question")
-    default_response = "Sorry I do not have the answer, or I do not understand your question"
-    return json.dumps({'answer': ''+default_response+'','question': ''+question+''})
+    #default_response = "Sorry I do not have the answer, or I do not understand your question"
+    answer = cm.find_answer(question)
+    return json.dumps({'answer': ''+answer+'','question': ''+question+''})
 
 
 def main():
