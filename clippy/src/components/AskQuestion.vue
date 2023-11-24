@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div class="all-qestion-container">
-      <div id="scroller"  v-for="(askedQuestion, i) in AllQuestions" :key="askedQuestion" >
+    <div id="scroller" class="all-qestion-container">
+      <div v-for="(askedQuestion, i) in AllQuestions" :key="askedQuestion" >
         <p class="asked-question">
           <span class="question">
             Me: {{ askedQuestion }}
@@ -55,6 +55,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem;
+  border: 1px solid #ccc;
 }
 input{
   padding: 0.5rem;
@@ -67,7 +69,8 @@ button{
 }
 .all-qestion-container{
 height: 10rem !important;
-overflow-y: scroll;
+overflow-y: auto;
+margin: 1rem;
 }
 .asked-question{
 display: flex;

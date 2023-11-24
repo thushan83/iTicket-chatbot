@@ -22,8 +22,8 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-/* body{
+body{
   display: flex;
   justify-content: center;
-} */
+}
 </style>
