@@ -1,6 +1,20 @@
 {
     "intents": [
       {
+        "tag": "my-self",
+        "patterns": [
+          "Who are you",
+          "what is your name",
+          "What are you called",
+          "Do you have a name"
+        ],
+        "responses": [
+          "I am ITicket",
+          "I am called iTicket",
+          "My name is iTicket"
+        ]
+      },
+      {
         "tag": "greeting",
         "patterns": [
           "Hi",
@@ -11,10 +25,10 @@
           "Good day"
         ],
         "responses": [
-          "Hey :-)",
-          "Hello, thanks for visiting",
+          "Hey :-), what can I do for you?",
+          "Hello, how can I help you?",
           "Hi there, what can I do for you?",
-          "Hi there, how can I help?"
+          "Hi there, how can I help you?"
         ]
       },
       {
@@ -22,7 +36,10 @@
         "patterns": [
           "create product",
           "new product",
-          "add product"        
+          "add product",
+          "How to add a new product",   
+          "How can I create a new product",
+          "I want to create a product"      
         ],
         "responses": [
           "Go to Inventory > Products > Press [+New]"
@@ -32,8 +49,9 @@
         "tag": "iticket_create_article",
         "patterns": [
           "create article",
-          "new article",
-          "add article"        
+          "add new article",
+          "How to create an article",
+          "I want to add a new article"       
         ],
         "responses": [
           "Go to Inventory > Articles > Press [+New]"
@@ -44,10 +62,14 @@
         "patterns": [
           "create location",
           "new location",
-          "add location"        
+          "add location",
+          "How to add a new location",   
+          "How can I create a new location",
+          "I want to create a location",
+          "I need to create a new location"          
         ],
         "responses": [
-          "Go to Inventory > Articles > Press [+New]"
+          "Go to Inventory > Locations > Press [+New]"
         ]
       },
       {
@@ -55,7 +77,11 @@
         "patterns": [
           "search order",
           "find order",
-          "locate order"
+          "locate order",
+          "How to search for an order",   
+          "How can I search for an order",
+          "I want to search for an order", 
+          "I need to search for an order"       
         ],
         "responses": [
           "Go to Order Management > Search Orders"

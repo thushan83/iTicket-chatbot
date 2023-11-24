@@ -47,6 +47,7 @@ class ChatManager():
         print("------------------------------------------------------")
         if prob.item() > 0.54:
             for intent in self.intents_from_file['intents']:
+                print(tag,"---",intent["tag"])
                 if tag == intent["tag"]:
                     return(random.choice(intent['responses']))
         else:

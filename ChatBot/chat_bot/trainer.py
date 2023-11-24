@@ -115,8 +115,8 @@ class Trainer():
                 loss.backward()
                 optimizer.step()
 
-                #if(training_turn%100 == 0):
-                print("Epoch = "+str(training_turn), "Loss = "+str(loss.item()))
+                if(training_turn%10 == 0):
+                    print("Epoch = "+str(training_turn), "Loss = "+str(loss.item()))
          
          data = {
           "model_state": model.state_dict(),
@@ -141,7 +141,7 @@ class Trainer():
         print("??",self.Y_Training_Set)
      
 if __name__ == "__main__":
-    trainer = Trainer(num_epochs =  50 , batch_size = 8 , learning_rate = 0.001, hidden_size = 8)
+    trainer = Trainer(num_epochs =  5000 , batch_size = 8 , learning_rate = 0.001, hidden_size = 8)
     training_data = trainer.prepare_training_data()
     trainer.populate_training_data_sets()
     #trainer.print()
