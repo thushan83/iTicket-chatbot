@@ -1,8 +1,12 @@
 <template>
   <div class="all-qestion-container">
-    <div id="scroller"  v-for="askedQuestion in AllQuestions" :key="askedQuestion" >
+    <div id="scroller"  v-for="(askedQuestion, i) in AllQuestions" :key="askedQuestion" >
       <p class="asked-question">{{ askedQuestion }}</p>
-      <p> {{ awnser }}</p>
+      <p v-for=" (answer, index) in answers" :key="answer">
+        <span v-if="index == i">
+          {{ answer }}
+        </span>
+      </p>
     </div>
   </div>
   <div>
@@ -20,9 +24,9 @@ export default {
     }
   },
   computed: {
-   awnser () {
+   answers () {
      console.log('awnser', this.$store.state.answer)
-     return this.$store.state.answer
+     return this.$store.state.answers
    }
   },
   methods: {

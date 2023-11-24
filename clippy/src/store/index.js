@@ -9,6 +9,7 @@ export default createStore({
   mutations: {
     saveAwnser(state, payload) {
       state.answer = payload;
+      state.answers.push(payload);
     },
 },
 actions: {
