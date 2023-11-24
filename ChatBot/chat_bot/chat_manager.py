@@ -11,14 +11,14 @@ class ChatManager():
            self.intents_from_file = json.load(file)
 
         FILE = "data.pth"
-        data = torch.load(FILE) 
+        data = torch.load(FILE)
 
         input_size = data["input_size"]
         hidden_size = data["hidden_size"]
         output_size = data["output_size"]
         self.all_words = data['all_words']
         self.tags = data['tags']
-        model_state = data["model_state"]  
+        model_state = data["model_state"]
 
         self.model = NN(input_size,hidden_size,output_size)
         self.model.load_state_dict(model_state)
@@ -55,4 +55,16 @@ class ChatManager():
         else:
             return default_response
 
+#def main():
+#    chatbot_name = "iTicket: "
+#    guest = "You: "
+#    cm = ChatManager()
+#    print(chatbot_name,"Welcome how can I help you ?")
+#    while True:
+#        question = ""
+#        question = input(guest)
+#        print(chatbot_name, cm.find_answer(question))
+
+#if __name__ == "__main__":
+#    main()
 
