@@ -53,16 +53,16 @@ class ChatManager():
         else:
             return default_response
 
-def main():  
-    chatbot_name = "iTicket: "
-    guest = "You: "
-    cm = ChatManager()  
-    print(chatbot_name,"Welcome how can I help you ?")
-    while True:
-        question = ""
-        question = input(guest)
-        print(chatbot_name, cm.find_answer(question))
+#def main():  
+#    chatbot_name = "iTicket: "
+#    guest = "You: "
+#    cm = ChatManager()  
+#    print(chatbot_name,"Welcome how can I help you ?")
+#    while True:
+#        question = ""
+#        question = input(guest)
+#        print(chatbot_name, cm.find_answer(question))
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
   
