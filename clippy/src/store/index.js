@@ -15,7 +15,7 @@ actions: {
     async askQuestion(context, payload) {
      console.log('payload', payload)
      const response = await API.askAIQuesion(payload)
-     console.log('response', response.res)
+     console.log('response', response.answer)
       context.commit('saveAwnser', response.answer)
     }
 }

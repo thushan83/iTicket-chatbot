@@ -1,6 +1,6 @@
 <template>
   <div class="all-qestion-container">
-    <div  v-for="askedQuestion in AllQuestions" :key="askedQuestion" >
+    <div id="scroller"  v-for="askedQuestion in AllQuestions" :key="askedQuestion" >
       <p class="asked-question">{{ askedQuestion }}</p>
       <p> {{ awnser }}</p>
     </div>
@@ -32,7 +32,10 @@ export default {
     console.log('question', this.question)
    await this.$store.dispatch("askQuestion", this.question)
    this.question = ''
-  }
+   const scroller = document.getElementById('scroller')
+   const container = scroller;
+      container.scrollTop = container.scrollHeight;
+  },
 }
 }
 </script>
@@ -47,10 +50,8 @@ button{
   background: #eee;
 }
 .all-qestion-container{
-  display: flex;
-  flex-direction: column;
   border: 1px solid #ccc;
-  max-height: 30%;
+  max-height: 10rem;
   overflow: scroll;
 }
 .asked-question{
