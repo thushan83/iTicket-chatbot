@@ -3,18 +3,19 @@
     <div class="all-qestion-container">
       <div id="scroller"  v-for="(askedQuestion, i) in AllQuestions" :key="askedQuestion" >
         <p class="asked-question">
-          <span class="test">
+          <span class="question">
             Me: {{ askedQuestion }}
           </span>
         </p>
         <p v-for="(answer, index) in answers" :key="answer">
-          <span v-if="index == i">
+          <span class="answer" v-if="index == i">
             ITicket: {{ answer }}
           </span>
         </p>
       </div>
     </div>
     <div>
+      <p v-if="!question && AllQuestions.length == 0"> Let me help you navigate in the protal!</p>
       <input v-model="question" type="text" placeholder="Ask your question">
       <button @click="ask()">Ask</button>
     </div>
@@ -65,22 +66,28 @@ button{
   background: #eee;
 }
 .all-qestion-container{
-  border: 1px solid #ccc;
-  max-height: 10rem;
-  overflow: scroll;
-  display: contents;
-  width: 30rem;
+height: 10rem !important;
+overflow-y: scroll;
 }
 .asked-question{
+display: flex;
+justify-content: end;
+width: 100%;
+}
+.question{
   padding: 0.5rem;
   margin-bottom: 0.5rem;
-}
-.test{
-  width: fit-content;
   background-color: beige;
   padding: 0 0.5rem;
-  float: inline-end;
-
+  width: fit-content;
+  border-radius: 4px;
+}
+.answer{
+  background-color: #eee;
+  padding: 0 0.5rem;
+  float: inline-start;
+  margin-bottom: 1.8rem;
+  border-radius: 4px;
 }
 
 </style>
