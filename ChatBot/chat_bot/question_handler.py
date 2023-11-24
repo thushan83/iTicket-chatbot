@@ -11,6 +11,16 @@ CORS(app)
 def index():
     return "Hello from iTicket chat server"
 
+@app.route('/chatbot/css')
+def css():
+    with open("./css/app.43244e21.css") as f:
+      return f.read()
+
+@app.route('/chatbot/js')
+def js():
+ with open("./js/app.f56781df.js") as f:
+      return f.read()
+
 
 @app.route('/chat', methods=['POST'])
 def chatlistner():

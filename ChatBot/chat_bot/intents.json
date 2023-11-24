@@ -42,7 +42,7 @@
           "I want to create a product"      
         ],
         "responses": [
-          "Go to Inventory > Products > Press [+New]"
+          "From the side menu please select, Inventory > Products > Press [+New]"
         ]
       },
       {
@@ -54,7 +54,7 @@
           "I want to add a new article"       
         ],
         "responses": [
-          "Go to Inventory > Articles > Press [+New]"
+          "From the side menu please select, Inventory > Articles > Press [+New]"
         ]
       },
       {
@@ -69,7 +69,7 @@
           "I need to create a new location"          
         ],
         "responses": [
-          "Go to Inventory > Locations > Press [+New]"
+          "From the side menu please select, Inventory > Locations > Press [+New]"
         ]
       },
       {
@@ -84,7 +84,7 @@
           "I need to search for an order"       
         ],
         "responses": [
-          "Go to Order Management > Search Orders"
+          "From the side menu please select, Order Management > Search Orders"
         ]
       }                
     ]

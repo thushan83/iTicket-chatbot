@@ -28,7 +28,9 @@ class ChatManager():
     def find_answer(self,question):
         q_words = self.dataCln.tokanize(question)
         x = self.dataCln.get_bag_of_words(q_words,self.all_words)
+        print("#####",x)
         x = x.reshape(1,x.shape[0])
+        print("&&&&&",x)
         x = torch.from_numpy(x).to(self.device)
 
         op = self.model(x)
@@ -53,16 +55,4 @@ class ChatManager():
         else:
             return default_response
 
-#def main():  
-#    chatbot_name = "iTicket: "
-#    guest = "You: "
-#    cm = ChatManager()  
-#    print(chatbot_name,"Welcome how can I help you ?")
-#    while True:
-#        question = ""
-#        question = input(guest)
-#        print(chatbot_name, cm.find_answer(question))
 
-#if __name__ == "__main__":
-#    main()
-  

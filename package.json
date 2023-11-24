@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "document-register-element": "^1.14.10",
+    "vue-custom-element": "^3.3.0",
+    "webpack": "^5.89.0"
+  }
+}
