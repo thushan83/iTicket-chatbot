@@ -3,20 +3,24 @@ iTicket Chat Bot provides help doing things in iTicket in terms of web links
 
 A simple chatbot trained to facilitate providing menu navigation help tips. It mainly focus on giving most suitable menu navigation path for the entity specified in the question. Its capable of answering questions related  to iticket orders, products, locations with menu navigation tips.
 
-Technologies Used
+## Technologies Used
  - NLTK
  - Pytorch
  - Vue.js
   
-Front-end: we created a Vue component that stores the conversation with our API
-Back-end: REST API that communicates with our own AI written in Python (NLP and Deep Learning)
-Techniques used : 
+### Front-end: 
+we created a Vue component that stores the conversation with our API
+### Back-end: 
+REST API that communicates with our own AI written in Python (NLP and Deep Learning)
+
+## Techniques used : 
+
 Tokenizing (extracting unique words) 
 Stemming (resolve the base form or verbs)
 Bag of Words (marking occurrences of words in questions against all known words)
 Neural Network (model trained to predict most suitable label for the incoming question)
 
-** Possible Improvements**
+## Possible Improvements
 
 - Improve training data with broader pattern sets than it has now to improve the quality of the responses
 - Improve the Neural Network layer (Now it uses three linear layers) wise trying out different layer types and different loss functions to improve training
